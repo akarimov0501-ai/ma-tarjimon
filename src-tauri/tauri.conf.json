@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MA Tarjimon",
+  "version": "0.1.0",
+  "identifier": "uz.ma.tarjimon",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MA Tarjimon",
+        "width": 1040,
+        "height": 680,
+        "minWidth": 720,
+        "minHeight": 480
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "dmg", "app"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "resources/llama/": "llama/"
+    },
+    "shortDescription": "Offline English ⇄ O'zbek tarjimon",
+    "longDescription": "MA Tarjimon — internetsiz ishlaydigan English ⇄ O'zbek tarjimon. TranslateGemma-4B asosidagi MA modeli kompyuterning o'zida ishlaydi.",
+    "windows": {
+      "nsis": {
+        "languages": ["English"],
+        "installMode": "currentUser"
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    }
+  }
+}
